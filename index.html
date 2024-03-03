@@ -9,19 +9,24 @@
 </head>
 
 
-<body style="background-color:rgb(0, 0, 0);">
+<body style=" background-image: linear-gradient(to bottom right, rgb(73, 171, 216), rgb(29, 66, 97));">
 <!--
 <div class="landing-page" id="landingPage">
     <h1>Welcome to My Portfolio</h1>
 </div>
 -->
-<nav class="landing-page" id="landingPage">
-    <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#certifications">Certifications and Licenses</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-    </ul>
+<nav class="navbar">
+    <button class="hamburger" id="hamburger">&#9776;</button>
+    <div class="navLinks" id="navLinks">
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications and Licenses</a></li>
+            <li><a href="#education">Education</a></li>
+            
+        </ul>
+    </div>
 </nav>
 
 <main>
@@ -29,22 +34,23 @@
         <div class="sidebar" id="sticky-sidebar">
             <h2>Efe Sezer Cildir</h2>
             <h3>Software Engineer</h3>
-            <img src="images/EfeSezerFoto.jfif" alt="Efe Sezer Cildir" style="width:300px;height:400px;border-radius:50%">
+            <img src="images/EfeSezerFoto.jfif" alt="Efe Sezer Cildir" style="width:200px;height:250px;border-radius:50%">
             <div class="social-links">
                 <a href="https://instagram.com/efe_atayhan" target="_blank"><img src="images/instagram-icon.png" alt="Instagram"></a>
                 <a href="https://linkedin.com/in/efesezer48" target="_blank"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
                 <a href="https://github.com/efesezer48" target="_blank"><img src="images/github-icon.png" alt="GitHub"></a>
                 <a href="mailto:efesezer48@gmail.com"><img src="images/gmail-icon.png" alt="Gmail"></a>
-            </div>
-            
+            </div> 
         </div>
-        <div class="main-content">
+        <div class="main-content" id="scrollable-content">
+            <section class="about-me" id="about">
             <h2>Who am I?</h2>
             <p>Highly motivated and committed CS student currently studying at Southern Utah University with experience in various fields. I am
-                very eager to learn new things everyday and apply them into my life and my career so that I can contribute to society through
-                inovation. My objective is to get an internship in a renowned company or at a startup in software engineering or machine learning
-                field to gain further experience and develop greater network</p>
-            <section class="experience">
+                    very eager to learn new things everyday and apply them into my life and my career so that I can contribute to society through
+                    inovation. My objective is to get an internship in a renowned company or at a startup in software engineering or machine learning
+                    field to gain further experience and develop greater network</p>
+            </section>
+            <section class="experience" id="experience">
                 <h2>Work Experience</h2>
                     <h3><strong>Undergraduate Research Assistant (Intelligent Threat Detection and Response System)</strong></h3>
                     <li>Designed and implemented a highly accurate predictive model using ML and DL techniques to differentiate between normal
@@ -69,22 +75,86 @@
                     <li>Leading R&D t efforts and demonstrating proactive leadership in critical decision-making</li>
                     <li>Facilitating the establishment of an AI research center at Istanbul Technical University Technopark after getting legal approvals</li>
                     <li>Employing technical skills in programming, data analysis, and system design to advance AI project</li>
-                    <br>        
+                    <br>  
+                    <h3><strong>IT Technician - Delta Global International Education Co. Ltd</strong></h3>
+                    <li>Built reliable websites with HTML, CSS and JavaScript for better user interaction and conducted SEO to maximize traffic</li>
+                    <li>Troubleshot technical issues with websites, printers, networks, operating systems, and applications</li>
+                    <li>Installed, configured, and maintained computer hardware and software systems.</li>
+                    <br>   
+                    <h3><strong>Front-End Web Developer - Coante Quartz Surfaces</strong></h3>
+                    <li>Developed and optimized websites using JavaScript, HTML5, and CSS3, enhancing user satisfaction by 25%</li>
+                    <li>Analyzed sales data with Microsoft Power BI, identifying key trends and improvement areas</li>
+                    <li>Implemented interactive web interfaces with React.js and Angular.js, boosting user engagement for key targets</li>
+                    <br>  
+                    <h3><strong>Intern - Turkish Informatics Foundation</strong></h3>
+                    <li>Completed 4-week intensive bootcamp, followed by a hands-on internship focusing on Python & R language for data mining.</li>
+                    <li>Engaged in data preprocessing and analysis using various Machine Learning and Deep Learning algorithms</li>
+                    <li>Contributed to a key project aimed at detecting cancer in lung tomography images.</li>
+                    <br>     
                     <!-- Add more experiences as list items -->
                 
             </section>
-            <section class="projects">
+            <section class="projects" id="projects">
                 <h2>Projects</h2>
-                <ul>
-                    <li>Participant - Machine Learning Challenge - Developed an innovative artificial intelligence model...</li>
-                    <!-- Add more projects as list items -->
-                </ul>
+                <h3><strong>Participant - Machine Learning Challenge</strong></h3>
+                <li>Developed an innovative artificial intelligence model aimed at optimizing user experiences in mobile applications</li>
+                <li>Employed advanced data analysis and machine learning techniques to accurately predict and recommend user-specific menus,
+                    demonstrating a keen understanding of user preferences and behavior.</li>
+                <br>
+                <h3><strong>Participant - Machine Learning Challenge</strong></h3>
+                <li>Developed an innovative artificial intelligence model aimed at optimizing user experiences in mobile applications</li>
+                <li>Employed advanced data analysis and machine learning techniques to accurately predict and recommend user-specific menus,
+                    demonstrating a keen understanding of user preferences and behavior.</li>
+                <br>
+                <h3><strong>Mentor - Vex Robotics</strong></h3>
+                <li>Successfully completed a 3-day intensive VEX Robotics Mentor Training Camp, acquiring hands-on experience</li>
+                <li>Received certification from the VEX Foundation for mentorship and technical proficiency in robotics.</li>
+                <li>After the completion of program, worked with 9th grade students to build robots and attended competitions following year</li>
+                <br>  
+                <h3><strong>Nanotechnology Research Project - Mugla University</strong></h3>
+                <li>Conducted an innovative research project under university professor mentorship in a state-of-the-art facility</li>
+                <li>Developed a novel method for producing graphene oxide, leading to the synthesis of stronger carbon-based allotropes, including
+                    Activated Carbon, Graphene Oxide, and Graphite.</li>
+                <li>Compared physical and chemical activation data, demonstrating that steam pyrolysis could yield higher quality Activated Carbon.</li>
+                <br> 
+                <h3><strong>Team Captain - FIRST Robotics Competition</strong></h3>
+                <li>Contributed to design and construction of two robots, incorporating image recognition algorithms for enhanced performance.</li>
+                <li>Achieved the Entrepreneurship Award (Istanbul, 2016) and Rookie Inspiration Award (New York City, 2017) for exceptional team
+                    effort and innovative robot design.</li>
+                <br>      
+            </section>
+            <section class="certifications" id="certifications">
+                <h2>Certifications and Licences</h2>
+                <h3><strong>Azure Machine Learning for Data Scientists</strong></h3>
+                <h4 style="color:white;">Microsoft, Coursera</h4>
+                <ol>Issued Nov - 2023</ol>
+                <br>  
+                <h3><strong>Mathematical Thinking in Computer Science</strong></h3>
+                <h4 style="color:white;">UC San Diego, Coursera</h4>
+                <ol>Issued Nov - 2023</ol>
+                <br> 
+                <h3><strong>Machine Learning A-Z: AI, Python & R</strong></h3>
+                <h4 style="color:white;">Udemy</h4>
+                <ol>Issued Nov - 2023</ol>
+                <br> 
+                <h3><strong>Inspiring and Motivating Individuals</strong></h3>
+                <h4 style="color:white;">University of Michigan, Coursera</h4>
+                <ol>Issued May - 2023</ol>
+                <br> 
+                <h3><strong>AI Tomorrow Summit 2023</strong></h3>
+                <h4 style="color:white;">UC San Diego, Coursera</h4>
+                <ol>Issued Nov - 2023</ol>
+                <br>  
             </section>
             <!-- Add more sections as needed -->
         </div>
     </div>
 </main>
+<footer>
+    <p>Copyright &copy; efesezer 2024</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
 </html>
+
