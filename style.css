@@ -2,19 +2,21 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-wrap:wrap;
+    max-width:100%;
+    overflow-x:hidden;
 }
 
-
-h1, h2, h3, p {
+h1, h2, h3, p , li, ol, ul {
     color: white;
 }
 
-.landing-page {
-    animation: slideDown 0.2s ease-out forwards;
+.navbar{
+    animation: slideDown 0.5s ease-out forwards;
     opacity: 0; /* Start with the element invisible */
     transform: translateY(-100%); /* Start above the screen */
 }
-
 
 nav {
     position: -webkit-sticky; /* For Safari */
@@ -26,7 +28,7 @@ nav {
 
 nav ul {
     margin: 0;
-    padding: 0;
+    padding: 20px;
     list-style: none;
     text-align: center;
     background-color: #333;
@@ -49,48 +51,75 @@ nav ul li a:focus {
     background-color: #555; /* Adds a hover effect */
 }
 
-#about{
-    margin-left:19px; 
+#about {
+    margin-bottom:50px;
 }
 
 #about h2 {
     margin-bottom:0px;
-    
 }
+
 #about h2 + h3 {
     margin-top:0px;
 }
 
 .container {
-    display: flex;
-    align-items: flex-start;
+    flex-basis:100%;
+    padding-right:20px;
+}
+
+.main-content{
+    flex-basis:30%;
+    padding:20px;
+    overflow-y:auto;
+    float:left;
+    margin-right:20px;
+}
+
+#experience {
+    margin-bottom:50px;
 }
 
 #sticky-sidebar {
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
+    /*
+    position: sticky; */
+    display:flex; /* Use flexbox*/
+    flex-direction:column; /* stack items vertically*/
     top: 0; /* Adjust based on your header/nav height */
     height: 100vh; /* Full height of the viewport */
     width: 30%; /* Adjust the width of the sticky sidebar */
     padding: 20px;
     margin-right: 20px; /* Adds some space between the two sections */
+    align-items: center;
 }
 
 #scrollable-content {
-    width: 70%; /* Adjust based on the sticky sidebar width */
+    width: 50%; /* Adjust based on the sticky sidebar width */
     overflow-y: auto;
-    padding: 20px;
+    padding-right: 20px;
+    box-sizing: border-box; /*THIS IS THE PART WHERE IT PREVENTS CONTENT TO LAY OVER THE SIDE OF THE PAGE */
 }
 
 /* Adjusting h2 and h3 spacing within the #about section */
 #sticky-sidebar h2,
 #sticky-sidebar h3 {
     margin-bottom: 10px; /* Reduces space between h2 and h3 */
+    align-items:center;
 }
 
+#sticky-sidebar img {
+    align-items: center;
+    height:auto;
+}
+
+#sticky-sidebar a{
+    text-align: center;
+    display:block;
+}
 /* Adding some margin to the left of each section */
 #scrollable-content > div {
     margin-left: 20px; /* Adds margin to the left of scrollable sections */
+    margin-right:20px;
 }
 
 .social-links {
@@ -101,9 +130,75 @@ nav ul li a:focus {
 }
 
 .social-links a img {
-    width: 40px; /* Adjust size as needed */
-    height: 40px; /* Adjust size as needed */
+    width: 30px; /* Adjust size as needed */
+    height:40px; /* Adjust size as needed */
 }
+
+.sidebar {
+    width: 35%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    /*height: 100vh;*/
+    float:left;
+}
+
+/* Adjusts the image size within the sidebar */
+.sidebar img {
+    width: 100%; /* Adjusts the image width to fit the sidebar */
+    height: auto; /* Keeps the image aspect ratio */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    background-color: #333; /* Example background color */
+}
+
+.navLinks ul {
+    list-style: none;
+    display: flex;
+    
+}
+
+.navLinks ul li a {
+    text-decoration: none;
+    color: white; /* Example text color */
+    padding: 0 15px;
+}
+.navbar .nav-links ul {
+    justify-content: center;
+}
+
+.hamburger {
+    display: none; /* Hide by default */
+    cursor:pointer;
+}
+.hamburger.hide{
+    display:none;
+}
+.navLinks.active ul  {
+    display:block;
+}
+.navLinks.active ul li  {
+    display:block;
+}
+.navLinks.active ul li a {
+    display:block;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333; /* Change as per your color scheme */
+    color: white; /* Adjust the color as needed */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
 
 @keyframes slideDown {
     from {
@@ -116,12 +211,63 @@ nav ul li a:focus {
     }
 }
 
-@media (max-width:768px){
-    .container {
-        flex-direction:column;
+@media screen and (min-width: 768px) {
+    .sidebar {
+        position: -webkit-sticky;
+        position: sticky;
+        height: 100vh;
     }
-    .sidebar , .main-content {
+    
+}
+
+@media screen and (max-width: 768px) {   
+    .sidebar {
+        padding-right:0px;
+        margin-right:0px;
+        height:auto;
+        
+    }
+    .navbar {
         width:100%;
-        padding:10px;
     }
+    .navLinks ul {
+        display: none; /* Hide nav links in mobile view */
+    }
+    .hamburger {
+        display: block; /* Show hamburger icon */
+        font-size:20px;
+    }
+    .navbar li { /* Assuming your links are direct children; adjust selector as needed */
+        display: none;
+    }
+    
+    #sticky-sidebar {
+        position: static; /* Makes the sidebar non-sticky on mobile */
+        width: 100%; /* Sidebar takes full width on smaller screens */
+        margin-right: 10px; /* Adjusts the margin for mobile layout */
+        margin-bottom:0px;
+        height:auto;  /*To disable the height: 100vh property on mobile*/
+    }
+    #scrollable-content {
+        width: 100%; /* Allows content to take full width on mobile */
+        margin-right: 10px;
+        margin-left:0px;
+    }
+    .container {
+        padding:10px;
+        
+    }
+    
+    
+    /*.sidebar {
+        position: static; /* Non-sticky on mobile devices 
+        width: 100%; /* Full width on smaller screens 
+    }
+
+    .sidebar img {
+        max-width: 80%; /* Adjusts image size for smaller screens 
+        margin: 0 auto; /* Centers the image 
+        display: block; /* Corrects the display for image centering 
+    }
+    */
 }
