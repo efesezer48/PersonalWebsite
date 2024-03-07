@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efe Sezer Cildir</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stil7.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
 
-<body style=" background-image: linear-gradient(to bottom right, rgb(73, 171, 216), rgb(29, 66, 97));">
+<body style=" background-image: linear-gradient(to right, rgb(23, 29, 48), rgb(51, 108, 148));">
 <!--
 <div class="landing-page" id="landingPage">
     <h1>Welcome to My Portfolio</h1>
@@ -30,7 +30,7 @@
 </nav>
 
 <main>
-    <div class="container">
+    <div class="container"  id="main-content">
         <div class="sidebar" id="sticky-sidebar">
             <h2>Efe Sezer Cildir</h2>
             <h3>Software Engineer</h3>
@@ -41,8 +41,15 @@
                 <a href="https://github.com/efesezer48" target="_blank"><img src="images/github-icon.png" alt="GitHub"></a>
                 <a href="mailto:efesezer48@gmail.com"><img src="images/gmail-icon.png" alt="Gmail"></a>
             </div> 
+            <div class="sidebar-sections">
+                    <a href="#about">About Me</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#certifications">Certifications</a>
+                    <a href="#contact">Contact Me</a>
+            </div>
         </div>
-        <div class="main-content" id="scrollable-content">
+        <div class="scrollable-content" id="scrollable-content">
             <section class="about-me" id="about">
             <h2>Who am I?</h2>
             <p>Highly motivated and committed CS student currently studying at Southern Utah University with experience in various fields. I am
@@ -127,34 +134,67 @@
                 <h2>Certifications and Licences</h2>
                 <h3><strong>Azure Machine Learning for Data Scientists</strong></h3>
                 <h4 style="color:white;">Microsoft, Coursera</h4>
-                <ol>Issued Nov - 2023</ol>
+                <p>Issued Nov - 2023</p>
                 <br>  
                 <h3><strong>Mathematical Thinking in Computer Science</strong></h3>
                 <h4 style="color:white;">UC San Diego, Coursera</h4>
-                <ol>Issued Nov - 2023</ol>
+                <p>Issued Nov - 2023</p>
                 <br> 
                 <h3><strong>Machine Learning A-Z: AI, Python & R</strong></h3>
                 <h4 style="color:white;">Udemy</h4>
-                <ol>Issued Nov - 2023</ol>
+                <p>Issued Nov - 2023</p>
                 <br> 
                 <h3><strong>Inspiring and Motivating Individuals</strong></h3>
                 <h4 style="color:white;">University of Michigan, Coursera</h4>
-                <ol>Issued May - 2023</ol>
+                <p>Issued May - 2023</p>
                 <br> 
                 <h3><strong>AI Tomorrow Summit 2023</strong></h3>
                 <h4 style="color:white;">UC San Diego, Coursera</h4>
-                <ol>Issued Nov - 2023</ol>
+                <p>Issued Nov - 2023</p>
                 <br>  
             </section>
             <!-- Add more sections as needed -->
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <form id="contactForm" action="https://formspree.io/f/mgegybgp" method="POST" onsubmit="submitForm(event)">
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+            
         </div>
     </div>
 </main>
+<button id="goUpBtn" title="Go to top">↑</button>
+
 <footer>
     <p>Copyright &copy; efesezer 2024</p>
 </footer>
 
-<script src="script.js"></script>
+<script src="script7.js"></script>
+<script>
+    function submitForm(e) {
+        e.preventDefault(); // Prevent the default form submission
+        var form = document.getElementById('contactForm');
+        var formData = new FormData(form);
+        fetch('https://formspree.io/f/mgegybgp', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            },
+        }).then(response => {
+            if (response.ok) {
+                form.innerHTML = '<p>Thank you for your email, I will shortly check and get back to you.</p>'; // Display the thank you message
+            } else {
+                form.innerHTML = '<p>There was an error with your submission, please try again.</p>';
+            }
+        });
+    }
+    </script>
 </body>
 </html>
-

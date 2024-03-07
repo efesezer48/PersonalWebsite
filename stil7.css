@@ -1,0 +1,431 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-wrap:wrap;
+    max-width:100%;
+    overflow-x:hidden;
+    
+}
+
+h1, h2, h3, p , li, ol, ul {
+    color: white;
+}
+
+.navbar{
+    animation: slideDown 0.5s ease-out forwards;
+    opacity: 0; /* Start with the element invisible */
+    transform: translateY(-100%); /* Start above the screen */
+}
+
+nav {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures the nav bar is above other content */
+    background-color: #333; /* Or any color you prefer */
+}
+
+nav ul {
+    margin: 0;
+    padding: 20px;
+    list-style: none;
+    text-align: center;
+    background-color: #333;
+}
+
+nav ul li {
+    display: inline-block; /* Align items horizontally */
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #555; /* Adds a hover effect */
+}
+
+#about {
+    margin-bottom:50px;
+}
+
+#about h2 {
+    margin-bottom:0px;
+}
+
+#about h2 + h3 {
+    margin-top:0px;
+}
+
+.container {
+    flex-basis:100%;
+    padding-right:20px;
+    height:100vh;
+    overflow-y: auto;
+}
+
+.scrollable-content{
+    flex-basis:30%;
+    padding:20px;
+    overflow-y:auto;
+    float:left;
+    margin-right:20px;
+}
+
+#experience {
+    margin-bottom:50px;
+}
+
+#sticky-sidebar {
+    position: sticky;
+    display:flex; /* Use flexbox*/
+    flex-direction:column; /* stack items vertically*/
+    top: 0; /* Adjust based on your header/nav height */
+    height: 100vh; /* Full height of the viewport */
+    width: 30%; /* Adjust the width of the sticky sidebar */
+    padding: 20px;
+    margin-right: 20px; /* Adds some space between the two sections */
+    align-items: center;
+}
+
+#scrollable-content {
+    width: 50%; /* Adjust based on the sticky sidebar width */
+    overflow-y: auto;
+    padding-right: 20px;
+    box-sizing: border-box; /*THIS IS THE PART WHERE IT PREVENTS CONTENT TO LAY OVER THE SIDE OF THE PAGE */
+}
+
+/* Adjusting h2 and h3 spacing within the #about section */
+#sticky-sidebar h2,
+#sticky-sidebar h3 {
+    margin-bottom: 10px; /* Reduces space between h2 and h3 */
+    align-items:center;
+}
+
+#sticky-sidebar img {
+    align-items: center;
+    height:auto;
+}
+
+#sticky-sidebar a{
+    text-align: center;
+    display:block;
+}
+/* Adding some margin to the left of each section */
+#scrollable-content > div {
+    margin-left: 20px; /* Adds margin to the left of scrollable sections */
+    margin-right:20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.social-links a img {
+    width: 30px; /* Adjust size as needed */
+    height:40px; /* Adjust size as needed */
+}
+
+.sidebar {
+    width: 40%;
+    position: -webkit-sticky;
+    position:sticky;
+    top: 0;
+    /*height: 100vh;*/
+    float:left;
+    height:100vh;
+    
+}
+
+.sidebar h2 {
+    margin-bottom: 0; /* Reduces the bottom margin of the h2 element */
+    top: 0;
+}
+
+.sidebar h3 {
+    margin-top: 0; /* Reduces the top margin of the h3 element */
+  
+}
+/* Adjusts the image size within the sidebar */
+.sidebar img {
+    width: 100%; /* Adjusts the image width to fit the sidebar */
+    height: auto; /* Keeps the image aspect ratio */
+}
+
+.sidebar-sections {
+    margin-top: 20px;
+}
+
+.sidebar-sections a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.sidebar-sections.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-sections a:hover,
+.sidebar-sections a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    background-color: #333; /* Example background color */
+}
+
+.navLinks ul {
+    list-style: none;
+    display: flex;
+    
+}
+
+.navLinks ul li a {
+    text-decoration: none;
+    color: white; /* Example text color */
+    padding: 0 15px;
+}
+.navbar .nav-links ul {
+    justify-content: center;
+}
+
+.hamburger {
+    display: none; /* Hide by default */
+    cursor:pointer;
+}
+.hamburger.hide{
+    display:none;
+}
+.navLinks.active ul  {
+    display:block;
+}
+.navLinks.active ul li  {
+    display:block;
+    margin-top: 10px;
+}
+.navLinks.active ul li a {
+    display:block;
+}
+
+#goUpBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#goUpBtn:hover {
+    background-color: #555;
+}
+
+#contact {
+    text-align: center;
+    padding: 50px;
+}
+
+#contactForm {
+    margin-top: 20px;
+}
+
+#contactForm input[type=text], 
+#contactForm input[type=email], 
+#contactForm textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#contactForm button[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#contactForm button[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333; /* Change as per your color scheme */
+    color: white; /* Adjust the color as needed */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .sidebar {
+        position: -webkit-sticky;
+        position: sticky;
+        height: 100vh;
+    }
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      
+    
+}
+
+@media screen and (max-width: 768px) {   
+    .sidebar-sections {
+        display:none;
+    }
+    .sidebar , #sticky-sidebar {
+        /*padding-right:0px;
+        margin-right:0px;
+        height:auto; 
+        */
+        position: static; /* Makes the sidebar non-sticky on mobile */
+        /* margin-right: 10px; /* Adjusts the margin for mobile layout */
+        margin-bottom:0px;
+        height:auto;  /*To disable the height: 100vh property on mobile*/
+        align-items: center;
+        margin-left:-10px;
+        /*padding-right:0px; margin-right:0px; height:auto; */
+        display: flex; /* Add this */
+        flex-direction: column; /* Add this */
+        /* Makes the sidebar non-sticky on mobile */
+        width: 100%;
+        /* Sidebar takes full width on smaller screens */
+        /* margin-right: 10px; /* Adjusts the margin for mobile layout */
+        justify-content: center; /* Add this to center items vertically */
+    }
+    #sticky-sidebar h2, h3 {
+        text-align: center;   
+        margin-top:20px; 
+    }
+    .sidebar h2, .sidebar h3, .sidebar img, .social-links a {
+        margin: auto;
+        display:block;
+
+        /*text-align: center;
+        align-items:center; */
+        /* If your images or links are not centering with text-align, 
+           you can use 'margin: auto' or 'display: block' as needed. */
+    }
+    .sidebar img {
+        margin-top:40px;
+    }
+    .social-links a {
+        display: inline-block; /* Change 'display' to 'inline-block' */
+        margin: 0 5px; /* Adjust the left and right margins */
+      }
+    .navbar {
+        width:100%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    .navLinks ul {
+        display: none; /* Hide nav links in mobile view */
+    }
+    .hamburger {
+        display: block; /* Show hamburger icon */
+        font-size:20px;
+    }
+    .navbar li { /* Assuming your links are direct children; adjust selector as needed */
+        display: none;
+    }
+    
+    #scrollable-content {
+        width: 100%; /* Allows content to take full width on mobile */
+        margin-right: 10px;
+        margin-left:0px;
+    }
+    #about{
+        text-align: center;
+        display: block;
+        margin: auto;
+    }
+    #experience{
+        text-align: center;
+        display: block;
+        margin: auto;
+    }
+
+    #projects{
+        text-align: center;
+        display: block;
+        margin: auto;
+    }
+    
+    #certifications{
+        text-align: center;
+        display: block;
+        margin: auto;
+    }
+    /*
+    .certifications h3,
+    .certifications h4, 
+    .certifications ol {
+        text-align: center;
+        display: block;
+        margin: auto;
+    }
+    */
+    
+    /*.sidebar {
+        position: static; /* Non-sticky on mobile devices 
+        width: 100%; /* Full width on smaller screens 
+    }
+
+    .sidebar img {
+        max-width: 80%; /* Adjusts image size for smaller screens 
+        margin: 0 auto; /* Centers the image 
+        display: block; /* Corrects the display for image centering 
+    }
+    */
+}
